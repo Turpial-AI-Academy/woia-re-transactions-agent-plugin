@@ -1,29 +1,7 @@
-# Validation obligations
+# Validation
 
-The scaffold supplies generic package/release validation and regression fixtures. Add domain-specific tests and regressions.
+Authoritative profile: Ecosystem v0.5.4 centralized `plugin:certify-thin` on one clean committed candidate. Execute local bootstrap/doctor, `mise run test`, `mise run ci:fast`, then clean-candidate, official-plugin-validation, agent-skills-validation, payload-safety-validation, portable-archive-validation and provider-domain-regression from the official thin tool.
 
-Capability regressions should prove bounded amendments of healthy authoritative artifacts, deep-path escalation, preservation of unrelated valid artifacts/evidence, targeted invalidation/revalidation, and independent gate ownership. Assert semantic obligations or observable behavior rather than rigid prose sentences unless exact wording is the contract. Adapt these cases to the capability; do not embed provider-specific policy in generic package validation.
+Domain tests protect human-led commitment recording, immutable supersession, current Mandate/subject/property scope, competing reservations, atomic expected revisions, idempotency/replay, scoped authority/source effective intervals/revocation, exact payload approvals and independent closing/money/possession. JSON command variants are compiled/validated with Ajv in domain regression.
 
-Report reusable durable execution/observation evidence, invalidated evidence, freshly established evidence, and assumptions/inferences that are not evidence. Independently inspect reused evidence and rerun affected checks plus mandatory invariants when changes invalidate it. This refinement does not reduce the formal gates below.
-
-Before first release:
-
-~~~text
-# after README.plugin.md -> README.md and placeholder replacement
-mise install
-mise run bootstrap
-# optional source diagnostic; not a release gate
-pnpm run checksums:generate
-mise run doctor
-mise run validate
-mise run test
-mise run ci:fast
-mise run ci:extended
-mise run jobs:local
-# commit candidate
-mise run release:check
-~~~
-
-Also run `skills-ref validate` for each skill when available.
-
-No placeholder token or scaffold-only `README.plugin.md` may remain in the release candidate.
+Physical persistence/CAS, remote adapter integration, engineering full-profile container parity, extended/jobs-local and full-profile release-check are NOT_RUN/dormant for this thin implementation. They are not substitutes for thin certification and no PASS is claimed. A host must persist the entire mutation atomically, authenticate trusted inputs and validate source evidence before deployment. Operator E2E, fresh G6/G7 and Production Ready remain NOT_RUN/false.

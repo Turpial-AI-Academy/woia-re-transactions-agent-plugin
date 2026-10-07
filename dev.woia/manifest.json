@@ -1,0 +1,24 @@
+{
+  "schema": "dev.woia.provider-manifest/v1",
+  "name": "woia-re-transactions",
+  "capability": "re-transactions",
+  "version": "0.5.0",
+  "origin": "native",
+  "authoring_profile": "thin",
+  "actions": [
+    "negotiation.record",
+    "offer.record",
+    "offer.supersede",
+    "reservation.create",
+    "reservation.update",
+    "reservation.release",
+    "reservation.expire",
+    "sale-transaction.milestone.record",
+    "sale-transaction.close-record"
+  ],
+  "support": {
+    "deterministic_contract": "implemented",
+    "storage_adapter": "NOT_QUALIFIED",
+    "external_effects": "unsupported"
+  }
+}
