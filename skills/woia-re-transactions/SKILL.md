@@ -1,55 +1,38 @@
 ---
 name: woia-re-transactions
-description: Real Estate domain provider for attributable versioned transactions facts under exact source and authority boundaries.
+description: Record attributable human-led negotiations, immutable offers, bounded reservations and independent sale milestones. Use for Real Estate transaction facts; never negotiate, send offers or post money autonomously.
 license: MIT
 ---
 
-# woia-re-transactions
+# Real Estate Transactions
 
-## Operating flow
-
-~~~text
-DISCOVER -> DECIDE -> IMPLEMENT -> VALIDATE -> REPORT
-~~~
-
-## Purpose
-
-Real Estate domain provider for attributable versioned transactions facts under exact source and authority boundaries.
-
-## Minimum sufficient evidence
-
-Use a bounded path when an authoritative existing artifact/evidence set is healthy and the requested change is local and understood:
-
-1. identify the artifact/evidence, source candidate, and affected surface;
-2. load only supporting context and references needed for that surface;
-3. amend or re-evaluate the smallest coherent unit;
-4. verify affected behavior plus mandatory cross-cutting invariants;
-5. preserve unrelated valid artifacts/evidence and report what changed.
-
-Use the deep path for a new artifact, unclear scope or contradictory evidence, public API/event/schema changes, persisted data/migrations, authentication/authorization/secrets/signing/trust boundaries, deployment/rollback/availability risk, cross-provider dependency restructuring, unhealthy or unfamiliar conventions, missing durable required evidence, or a failed invariant that invalidates reused evidence. Load the references/checklists needed by those triggers and retain all required safety validation.
+DISCOVER -> DECIDE -> IMPLEMENT -> VALIDATE -> REPORT.
 
 ## Discover
 
-Inspect actual repository/system state before changing it. Locate authoritative artifacts/evidence and identify affected standards, constraints, supported platforms, integrations, and user requirements. Expand context when a dependency, uncertainty, or deep-path trigger requires it.
+Load [the transaction contract](references/CONTRACT.md) before any transaction mutation or recovery. Resolve current organization, Source Authority Map, actor/purpose/resource grants, policy revision and attributable human decisions. Reference shared Person/Organization and Property identities; do not duplicate them. Consult the published `woia-re-domain-contracts` logical contract for canonical relation meanings rather than defining competing schemas.
 
 ## Decide
 
-Select the smallest strategy that satisfies the capability. Preserve healthy existing standards. Do not infer policy from the author's workspace.
+Sales owns negotiation/offer/sale recording. Sales or Leasing may record scoped reservations. Negotiation and Offers are human-led. An agent may prepare a summary or persist an exact competent human contribution; it cannot independently create commercial intent, negotiate, transmit or accept it. External-person contact belongs to Customer Service via Communications.
 
 ## Implement
 
-Apply only authorized changes. Keep domain semantics independent from unrelated tooling.
+Use [the command schema](assets/request.schema.json) and deterministic `execute(state, request)` in [provider.mjs](scripts/provider.mjs). Host-supplied authority is trusted only after authentication and current policy/source lookup outside model-controlled input. Callers must enforce the persistence/CAS contract from the reference before accepting results. A pure reducer is not a live datastore, provider adapter, legal opinion or permission-grant service.
+
+Supported actions:
+
+- `negotiation.record`
+- `offer.record`, `offer.supersede`
+- `reservation.create`, `reservation.update`, `reservation.release`, `reservation.expire`
+- `sale-transaction.milestone.record`, `sale-transaction.close-record`
+
+Preserve old Offer objects on supersession, old Reservation versions on changes, original source evidence and stable operation identities. Reserve only under current Mandate/represented-subject/property scope and exact human terms. Never infer availability from a reservation flag or infer money/possession from pipeline/closing.
 
 ## Validate
 
-Run capability-appropriate checks and verify changed state. Reuse evidence only when it is durable, inspectable evidence of actual execution/observation with an identifiable candidate, checked surface, relevant inputs/environment, and outcome. Independently establish that it satisfies the gate being owned; prose claims or recollection are not execution evidence.
-
-A later mutation invalidates the checks whose coverage or inputs it affects. Rerun those checks and mandatory related invariants; preserve unaffected valid evidence. Reuse expensive runtime verification across an unchanged candidate and relevant environment. A new turn/session alone does not invalidate evidence. Execute or observe relevant checks when required evidence cannot be inspected or established. Skipped/unavailable checks are not PASS.
+Validate command shape before execution and recheck current authority/source evidence at execution, including replay. Reject stale revisions, conflicting operation keys, future/expired maps, revoked grants, conflicting sources, changed approvals and competing active reservations. Keep signature, closing, money and possession milestones independent. Source UNKNOWN/conflict cannot become accepted commitment.
 
 ## Report
 
-Report current state, source candidate, affected surface, decisions, changes, and exact usage/maintenance commands. Distinguish reusable evidence, invalidated evidence, freshly established evidence, and assumptions/inferences that are not evidence. Include remaining risks and uncertainties.
-
-## Detailed references
-
-Add focused files under `references/` only when more detail is needed and give each reference a concrete scope/risk/ambiguity load trigger. Load triggered safety references; a bounded amendment does not require every reference or full template replay. Add scripts/assets only when they materially improve deterministic execution.
+Return attributable operation receipts and exact source/history references. Distinguish local recording from external business execution. State remote adapters, Operator E2E and physical persistence qualification as NOT_RUN until actually qualified. Money is not posted and contact is not dispatched by this provider.
