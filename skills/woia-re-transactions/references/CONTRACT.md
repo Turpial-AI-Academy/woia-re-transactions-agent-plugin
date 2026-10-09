@@ -2,7 +2,7 @@
 
 ## Semantic ownership
 
-Permanent canonical relation schemas and cross-domain evals belong to published `woia-re-domain-contracts@v0.5.0`; these are command envelopes, not duplicate 85-relation schemas and not a hard repository dependency. Follow its Source Authority and transaction/financial integration contract before operation. The exact domain-contract release is commit `fb1c8a3f7fb116f2a00daf05ae335fdfbc7c3f3f`, tree `f3ff5a68a0d5df2e615a650eddc313c9585b7f08`. This provider remains operable without the temporary planning repository.
+Permanent canonical relation schemas and cross-domain evals belong to published `woia-re-domain-contracts@v0.5.6`; these are command envelopes, not duplicate 85-relation schemas and not a hard repository dependency. Follow its Source Authority and transaction/financial integration contract before operation. The exact domain-contract release is commit `fb1c8a3f7fb116f2a00daf05ae335fdfbc7c3f3f`, tree `f3ff5a68a0d5df2e615a650eddc313c9585b7f08`. This provider remains operable without the temporary planning repository.
 
 Negotiation has independent subject+role participants and property scopes. Offers retain attributable immutable terms references; supersession creates a new Offer related to the prior one. Reservation condition IDs are independent facts retained per version. The current commitment remains separate from Payment, availability and possession. Sale milestones retain code+occurrence candidate keys; recording a closing cannot generate absent money/possession facts.
 

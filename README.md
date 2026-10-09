@@ -1,6 +1,6 @@
 # woia-re-transactions
 
-Thin Real Estate shared provider v0.5.0 for human-attributed negotiation/offer records, versioned reservations and independent sale milestones.
+Thin Real Estate shared provider v0.5.6 for human-attributed negotiation/offer records, versioned reservations and independent sale milestones.
 
 Read [the skill](skills/woia-re-transactions/SKILL.md) and [the execution contract](skills/woia-re-transactions/references/CONTRACT.md). The portable helper uses JavaScript ES modules and Node built-ins. It records facts; it never negotiates, dispatches contact, posts money or infers closing from a won pipeline stage.
 
@@ -17,7 +17,7 @@ mise run bootstrap
 mise run doctor
 mise run test
 mise run ci:fast
-# commit the exact candidate; from Ecosystem v0.5.4:
+# commit the exact candidate; from Ecosystem v0.5.6:
 mise run plugin:certify-thin --repo <absolute-provider-path>
 ```
 
